@@ -20,8 +20,6 @@ parameters = {
 response = requests.get(url=OWM_Endpoint, params=parameters)
 response.raise_for_status()
 weather_data = response.json()
-# weather_data_id = weather_data["list"][0]["weather"][0]["id"]
-# print(weather_data_id)
 
 will_rain = False
 for hour_data in weather_data["list"]:
@@ -38,3 +36,4 @@ if will_rain:
     )
     
     print(message.status)
+ 
